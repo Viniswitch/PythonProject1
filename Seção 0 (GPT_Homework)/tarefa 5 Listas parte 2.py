@@ -137,7 +137,7 @@ for _ in range(10):
     lista9.append(numero9)
     for i in range(len(lista9)):
         if lista9[i] < 0:
-        lista9[i] = 0
+            lista9[i] = 0
 print(lista9)
 
 #    10.Leia 10 números e conte quantas vezes cada número aparece (sem `Counter`)
@@ -163,28 +163,38 @@ print(contagem)
 #    11. (ordenação manual): Leia uma lista e ordene ela sem usar `sort()`
 print("#    Questão 11")
 lista11 = []
+
 for _ in range(10):
     numero11 = int(input(f'Digite o numero {len(lista11)+1}/10 : '))
     lista11.append(numero11)
-    for a1 in range(len(lista11)):
-        for a2 in range(a1 + 1, len(lista11)):
-            if lista11[a1] > lista11[a2]:
-               lista11[a1], lista11[a2] = lista11[a2], lista11[a1]
+
+for a1 in range(len(lista11)):
+    for a2 in range(a1 + 1, len(lista11)):
+        if lista11[a1] > lista11[a2]:
+            lista11[a1], lista11[a2] = lista11[a2], lista11[a1]
 print(lista11)
 
 
 #    12. (segundo maior): Leia uma lista e encontre o segundo maior número, sem usar:`sort()` e/ou `set()`
 print("#    Questão 12")
-lista12 = []
-for _ in range(10):
-    numero12 = int(input(f'Digite o numero {len(lista12)+1}/10 : '))
-    lista12.append(numero12)
-    for a1 in range(len(lista12)):
-        for a2 in range(a1 + 1, len(lista12)):
-            if lista12[a1] > lista12[a2]:
-                lista12[a1], lista12[a2] = lista12[a2], lista12[a1]
-print(lista12)
-print(lista12[8])
+
+'''Começamos assumindo : '''
+maior = lista12[0]
+'''O maior = primeiro valor'''
+segundo = lista12[0]
+'''O segundo maior = primeiro valor'''
+
+for n in lista12:
+    '''analisando cada número da lista'''
+    if n > maior:
+        '''Se o número atual é maior que o maior:'''
+        segundo = maior
+        maior = n
+    elif n > segundo and n != maior:
+        '''não é o maior, mas pode ser o segundo'''
+        segundo = n
+
+print(segundo)
 
 #    13. (inversão manual): Inverta uma lista, sem usar `[::-1]` ou `reverse()`
 lista13 = []
@@ -195,28 +205,36 @@ for _ in range(5):
         for a2 in range(a1 + 1, len(lista13)):
             if lista13[a1] > lista13[a2]:
                 lista13[a1], lista13[a2] = lista13[a2], lista13[a1]
+invertida = []
 
-from collections import deque
-deq = deque()
+for i in range(len(lista13)-1, -1, -1):
+    invertida.append(lista13[i])
 
-for num in lista13:
-    deq.appendleft(num)
-print(deq)
-"""
+print(invertida)
+
+
 #    14. (maior sequência): Dada uma lista, encontre: o maior número de repetições consecutivas. Ex:[1,1,2,2,2,3] → resposta: 3
-lista14= str(input("Digite uma lista: "))
-lista14= lista14.split()
+lista14 = list(map(int, input("Digite os números separados por espaço: ").split()))
 
-contagem = {}
-for num in lista14:
-    if num in contagem:
-        contagem[num] += 1
+max_seq = 1
+atual = 1
+
+for i in range(1, len(lista14)):
+    if lista14[i] == lista14[i-1]:
+        atual += 1
+        if atual > max_seq:
+            max_seq = atual
     else:
-        contagem[num] = 1
-for chave, receita in contagem.items():
-    print(f'Valor da lista : "{chave}" / {contagem[chave]}X')
+        atual = 1
+
+print("Maior sequência:", max_seq)
 
 #    15. (remoção seletiva): Leia uma lista e: remova todos os números que aparecem mais de uma vez. Ex:[1,2,2,3,4,4] → [1,3]
+lista15 = str(input("Digite uma lista: "))
+lista15 = lista15.split()
+lista15 = set(lista15)
+lista15 = list(lista15)
+print(lista15)
 
 
 
@@ -224,15 +242,77 @@ for chave, receita in contagem.items():
 
 
 #    16.Leia uma lista e crie outra lista contendo apenas os valores únicos, mantendo a ordem original
+lista16= str(input("Digite itens para a lista : "))
+lista16= lista16.split()
+for n in lista16:
+    for a1 in range(0, len(lista16)):
+        for a2 in range(a1 + 1, len(lista16)):
+            if lista16[a1] > lista16[a2]:
+                lista16[a1], lista16[a2] = lista16[a2], lista16[a1]
+print(f'A 1 lista é {lista16}')
+
+lista26 = []
+contagem = {}
+for num in lista16:
+    if num in contagem:
+        contagem[num] += 1
+    else:
+        contagem[num] = 1
+for chave, receita in contagem.items():
+    lista26.append(chave)
+print(f'A lista 2 é : {lista26}')
 
 
 #    17.Leia uma lista e encontre o elemento mais frequente (sem `Counter`)
+lista17= str(input("Digite itens para a lista : "))
+lista17= lista17.split()
+print(lista17)
 
+dicio17 = {}
+for n in lista17:
+    dicio17.update({n : dicio17.get(n, 0) + 1})
+
+print(dicio17)
 
 #    18.Leia duas listas e crie uma terceira com elementos em comum
+lista18= str(input("Digite itens para a lista 1 : "))
+lista18= lista18.split()
+lista28= str(input("Digite itens para a lista 2 : "))
+lista28= lista28.split()
+
+print(f'A lista 1 é : {lista18}')
+print(f'A lista 2 é : {lista28}')
+
+lista38 = []
+for n in lista18:
+    for a in lista28:
+        if n == a:
+            lista38.append(a)
+print(lista38)
 
 
 #    19.Leia uma lista e verifique se ela está ordenada
+lista19= str(input("Digite itens para a lista : "))
+lista19= lista19.split()
+print(lista19)
+
+
+if lista19 != lista19.sort():
+    print("A lista não está ordenada")
+else:
+    print("A lista está ordenada")
+
+
 
 
 #    20.Leia uma lista e rotacione ela para a direita. Ex:[1,2,3,4] → [4,1,2,3]
+lista20= str(input("Digite itens para a lista : "))
+lista20= lista20.split()
+print(lista20)
+
+from collections import deque
+deq20 = deque()
+for n in lista20:
+    deq20.appendleft(n)
+print(deq20)
+"""
