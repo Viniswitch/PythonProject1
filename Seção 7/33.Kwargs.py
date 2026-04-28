@@ -93,3 +93,13 @@ def mostra_nomes(**kwargs):
 nomes = {'nome' : 'thomas', 'sobrenome' : 'Shelby'}
 print(mostra_nomes(**nomes))
 
+
+#    Kwargs desempacotam dicionarios :
+def soma_dict(a, b, c):
+    print(a + b + c)
+
+dicionario = dict(a =1, b = 2, c = 3)
+
+soma_dict(**dicionario)
+
+#    Os nomes das chaves devem ser iguais aos parametros da função
