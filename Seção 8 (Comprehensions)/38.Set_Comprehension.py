@@ -17,7 +17,9 @@ numeros = {x : x ** 2 for x in range(1,11)}
 print(numeros)
 
 
-
+#    Exemplo 3 :
+letras = {letra for letra in "Viniswitch"}
+print(letras)
 
 
 

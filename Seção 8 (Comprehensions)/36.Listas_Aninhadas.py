@@ -54,5 +54,9 @@ for lista in velha:
 #    Forma mais direta:
 [print(lista) for lista in [['X' if numero % 2 == 0 else 'O' for numero in range(1, 4)] for lista in range(1, 4)]]
 
+admin = True
+professor = True
+ativo = True
 
+if not admin or ativo:
 
