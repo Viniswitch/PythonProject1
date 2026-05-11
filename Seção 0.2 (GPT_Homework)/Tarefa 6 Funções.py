@@ -110,31 +110,3 @@ Crie uma função que receba uma lista e:
 
 * retorne outra lista contendo apenas os elementos únicos
 * mantendo a ordem
-
----
-
-# 🎯 COMO USAR ESSA LISTA
-
-* faça na ordem
-* tente sem olhar solução
-* me mande para corrigir
-
----
-
-# 🚀 CONCLUSÃO
-
-Você já está:
-
-> saindo de “resolver código” → para “estruturar funções”
-
-👉 isso é exatamente o próximo nível
-
----
-
-Se quiser, posso no próximo passo:
-
-* corrigir suas respostas dessa lista
-* ou montar a próxima ficha (nível ainda mais difícil)
-
-Só mandar 👍
-"""
