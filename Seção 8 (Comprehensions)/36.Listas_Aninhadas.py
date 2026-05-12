@@ -58,5 +58,5 @@ admin = True
 professor = True
 ativo = True
 
-if not admin or ativo:
+
 

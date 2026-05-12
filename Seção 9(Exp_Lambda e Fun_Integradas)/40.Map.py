@@ -38,9 +38,8 @@ print(list(map(lambda r2: math.pi * (r2 ** 2), raios)))
 
 #    Outro exemplo :
 
-cidades = [("Berlin", 29), ("Cairo", 36), ("Buenos Aires", 19), ("Tokyo", 27), ("Recife", 31)]
+TemperaturaCidades = [("Berlin", 29), ("Cairo", 36), ("Buenos Aires", 19), ("Tokyo", 27), ("Recife", 31)]
 
+Celsius_Fareinheit = lambda dado : (dado[0], (9/5 * dado[1] + 32))
 
-
-
-
+print(list(map(Celsius_Fareinheit, TemperaturaCidades)))
